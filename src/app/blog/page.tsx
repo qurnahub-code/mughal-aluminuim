@@ -12,15 +12,17 @@ export default function Blog() {
       excerpt: "Sleek office partitions require the perfect balance of visual aesthetics and safety. Sizing up 10mm vs 12mm safety profiles and frame tolerances.",
       image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80",
       date: "June 28, 2026",
-      author: "Abu Sufyan"
+      author: "Abu Sufyan",
+      slug: "glass-thickness-office-partitions"
     },
     {
       id: 2,
       title: "The Benefits of Double-Glazed Windows in Lahore's Heat",
       excerpt: "Beat the summer heat and reduce your AC utility bills by up to 30%. Discover how double glazing blocks sound and temperature transfer.",
-      image: "https://images.unsplash.com/photo-1509644851169-3ae01277f23d?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
       date: "June 15, 2026",
-      author: "Abu Sufyan"
+      author: "Abu Sufyan",
+      slug: "double-glazed-windows-lahore-heat"
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ export default function Blog() {
       excerpt: "Elevate your bathroom styling with dimmable backlights, smart touch sensors, and integrated demister pads. A comprehensive look.",
       image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=80",
       date: "May 22, 2026",
-      author: "Abu Sufyan"
+      author: "Abu Sufyan",
+      slug: "smart-led-mirrors-modern-homes"
     }
   ];
 
@@ -71,8 +74,9 @@ export default function Blog() {
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <div 
+              <Link 
                 key={post.id} 
+                href={`/blog/${post.slug}`}
                 className="bg-white rounded-xl border border-neutral-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col justify-between"
               >
                 <div>
@@ -91,7 +95,7 @@ export default function Blog() {
                     <h3 className="font-bold text-lg text-charcoal line-clamp-2 leading-snug group-hover:text-brand transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-neutral-500 text-xs font-light leading-relaxed line-clamp-3">
+                    <p className="text-neutral-550 text-neutral-500 text-xs font-light leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
                   </div>
@@ -102,7 +106,7 @@ export default function Blog() {
                     <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -118,7 +122,7 @@ export default function Blog() {
             <Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
             <Link href="/blog" className="hover:text-white transition-colors text-white font-bold">Blog</Link>
           </div>
-          <p>© {new Date().getFullYear()} Mughal Aluminium & Glass. All Rights Reserved. Crafted by <a href="https://netizenlabs.co" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline font-semibold">Abu Sufyan @NetizenLabs</a>.</p>
+          <p>© {new Date().getFullYear()} Mughal Aluminium & Glass. All Rights Reserved. Crafted by <a href="https://netizenlabs.online" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline font-semibold">Abu Sufyan @NetizenLabs</a>.</p>
         </div>
       </footer>
     </div>
