@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { 
   Phone, 
   MapPin, 
@@ -820,8 +821,15 @@ export default function MughalAluminum() {
 
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-neutral-800 text-center text-xs text-neutral-500">
-          <p>© {new Date().getFullYear()} Mughal Aluminium & Glass. All Rights Reserved. Designed with premium reference aesthetics.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-neutral-800 text-center text-xs text-neutral-500 space-y-4">
+          <div className="flex justify-center space-x-6 mb-4 font-medium">
+            <Link href="/" className="text-neutral-400 hover:text-white transition-colors">Home</Link>
+            <Link href="/about" className="text-neutral-400 hover:text-white transition-colors">About Us</Link>
+            <Link href="/privacy" className="text-neutral-400 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/disclaimer" className="text-neutral-400 hover:text-white transition-colors">Disclaimer</Link>
+            <Link href="/blog" className="text-neutral-400 hover:text-white transition-colors">Blog</Link>
+          </div>
+          <p>© {new Date().getFullYear()} Mughal Aluminium & Glass. All Rights Reserved. Crafted by <a href="https://netizenlabs.co" target="_blank" rel="noopener noreferrer" className="text-brand hover:underline font-semibold">Abu Sufyan @NetizenLabs</a>.</p>
         </div>
       </footer>
 
