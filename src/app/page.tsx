@@ -178,49 +178,86 @@ export default function MughalAluminum() {
     {
       title: 'Glass Doors & Entrances',
       description: 'Frameless, sliding, hinged, and automatic glass doors built with high-tensile tempered safety glass.',
-      icon: <Grid className="w-6 h-6 text-brand" />
+      icon: <Grid className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80',
+      features: ['12mm Tempered Safety Glass', 'Premium Hydraulic Floor Springs', 'Sleek Stainless Steel Pull Handles', 'Custom Sandblasted Patterns']
     },
     {
       title: 'Aluminum Office Partitions',
       description: 'Sleek, double-glazed soundproof cabins and slim-profile partitions for premium office environments.',
-      icon: <Columns className="w-6 h-6 text-brand" />
+      icon: <Columns className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80',
+      features: ['Double-Glazed Soundproofing', 'Slimline Profile Aluminum Sections', 'Integrated Venetian Blinds Option', 'Anodized or Powder-Coated Finishes']
     },
     {
       title: 'Tempered Shower Cabins',
       description: 'Custom-fit sliding and swing shower enclosures featuring luxury gold, black, or chrome stainless hardware.',
-      icon: <Layers className="w-6 h-6 text-brand" />
+      icon: <Layers className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+      features: ['8mm/10mm Safety Glass', 'Anti-Limescale Water Repellent Coating', 'Solid Brass Heavy-Duty Hinges', 'Magnetic Leak-Proof Closures']
     },
     {
       title: 'Thermal Break Windows',
       description: 'Energy-efficient insulated aluminum frames designed to minimize heat transfer and block outside noise.',
-      icon: <Box className="w-6 h-6 text-brand" />
+      icon: <Box className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      features: ['Polyamide Thermal Barriers', 'Multipoint Secure Locking System', 'Double EPDM Weather Stripping', 'Saves up to 30% on AC/Heating Bills']
     },
     {
       title: 'Premium Kitchen Cabinets',
       description: 'Corrosion-free, water-resistant aluminum modular kitchen structures finished with sleek glass fronts.',
-      icon: <Sparkles className="w-6 h-6 text-brand" />
+      icon: <Sparkles className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+      features: ['100% Water & Termite-Proof', 'Soft-Close Drawers & Blum Hinges', 'Hydraulic Lift-Up Upper Cabinets', 'Toughened Colored Glass Door Fronts']
     },
     {
       title: 'Smart LED Touch Mirrors',
       description: 'Luxury back-lit mirrors equipped with integrated touch sensors, dimmable lights, and anti-fog systems.',
-      icon: <Scaling className="w-6 h-6 text-brand" />
+      icon: <Scaling className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1620626011160-9928f1b2b64a?auto=format&fit=crop&w=800&q=80',
+      features: ['Intuitive Smart Touch Sensors', 'Dimmable Warm, Cool & Natural Lights', 'Integrated Anti-Fog Demister Pad', '5mm Copper-Free Silver Mirror']
     },
     {
       title: 'Structural Curtain Walls',
       description: 'Elegant commercial building facades featuring heavy-duty aluminum mullions and high-performance safety glass.',
-      icon: <Maximize className="w-6 h-6 text-brand" />
+      icon: <Maximize className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+      features: ['High Wind-Load Resistance Profiles', 'High-Performance Low-E Double Glass', 'Seismic Movement & Settlement Buffers', 'Superior Structural Glazing Adhesive']
     },
     {
       title: 'Spider Glass Shopfronts',
       description: 'Ultra-modern, highly transparent frameless storefront solutions utilizing structural steel spider fittings.',
-      icon: <Shield className="w-6 h-6 text-brand" />
+      icon: <Shield className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80',
+      features: ['Maximum Visible Light Transmission', 'Grade 316 Stainless Steel Spiders', 'Heavy-Duty Tempered Glass Fins', 'Custom Tailored Architectural Design']
     },
     {
       title: 'Double-Glazed Windows',
       description: 'Acoustic-grade windows integrating inert gas layers to deliver unparalleled thermal and sound insulation.',
-      icon: <Volume2 className="w-6 h-6 text-brand" />
+      icon: <Volume2 className="w-6 h-6 text-brand" />,
+      image: 'https://images.unsplash.com/photo-1509644851169-3ae01277f23d?auto=format&fit=crop&w=800&q=80',
+      features: ['Argon Gas Filled Chamber', 'High Sound Transmission Class Rating', 'Eliminates Internal Condensation', 'Dual Safety Glass Composition']
     }
   ];
+
+  const activeProduct = services.find(s => s.title === quoteService) || {
+    title: quoteService === 'Glass Calculation Estimate' ? 'Glass Estimator Quote' : 'Mughal Aluminium & Glass',
+    description: quoteService === 'Glass Calculation Estimate' 
+      ? 'Get a customized price estimation based on your glass dimensions, safety thickness, and choice of glass type.'
+      : 'Lahore\'s premium source for custom tempered glass shower cabins, office partitions, double-glazed windows, and luxury smart mirrors.',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+    features: quoteService === 'Glass Calculation Estimate' ? [
+      `Shape: ${shape.toUpperCase()}`,
+      `Size: ${width} x ${height} ${unit}`,
+      `Thickness: ${thickness} mm`,
+      `Glass Type: ${glassTypes.find(t => t.id === glassType)?.name || glassType}`
+    ] : [
+      '4.8 Star Rated Premium Service',
+      '100% Toughened Safety Glass',
+      'Lahore DHA & Bahria Town Preferred',
+      'Millimeter-Accurate Site Measurement'
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-brand selection:text-white">
@@ -417,23 +454,40 @@ export default function MughalAluminum() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc, idx) => (
-              <div 
+              <button 
                 key={idx} 
-                className="bg-[#FDFCFA] p-8 rounded-xl border border-neutral-100 hover:border-brand/40 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-1"
+                onClick={() => openQuoteModal(svc.title)}
+                className="group relative h-80 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer text-left focus:outline-none w-full"
               >
-                <div className="w-12 h-12 rounded-lg bg-brand/5 flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-brand group-hover:text-white">
-                  {React.cloneElement(svc.icon, { className: "w-6 h-6 text-brand transition-colors duration-300 group-hover:text-white" })}
+                {/* Background Image */}
+                <img 
+                  src={svc.image} 
+                  alt={svc.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                
+                {/* Glassmorphic Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-95" />
+
+                {/* Accent line on hover */}
+                <div className="absolute top-0 left-0 w-0 h-1.5 bg-brand transition-all duration-500 group-hover:w-full" />
+
+                {/* Content Container */}
+                <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                  <div className="w-10 h-10 rounded-lg bg-brand/10 border border-brand/20 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-brand group-hover:scale-105">
+                    {React.cloneElement(svc.icon as React.ReactElement<any>, { className: "w-5 h-5 text-brand group-hover:text-white transition-colors duration-300" })}
+                  </div>
+                  <h4 className="text-xl font-bold text-white tracking-tight transition-transform duration-300 group-hover:translate-x-1">{svc.title}</h4>
+                  <p className="text-neutral-300 text-xs font-light leading-relaxed mt-2 line-clamp-2 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    {svc.description}
+                  </p>
+                  
+                  <span className="inline-flex items-center text-xs font-bold text-brand mt-4 group-hover:text-brand-hover transition-colors">
+                    View Details & Get Quote
+                    <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
-                <h4 className="text-lg font-bold text-charcoal mb-3">{svc.title}</h4>
-                <p className="text-neutral-500 text-sm font-light leading-relaxed mb-6">{svc.description}</p>
-                <button 
-                  onClick={() => openQuoteModal(svc.title)} 
-                  className="inline-flex items-center text-xs font-semibold text-brand group-hover:text-brand-hover transition-colors cursor-pointer"
-                >
-                  Request Quote
-                  <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                </button>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -728,112 +782,155 @@ export default function MughalAluminum() {
       {/* Quote Request Modal */}
       {isQuoteModalOpen && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden border border-neutral-150 relative animate-in fade-in zoom-in-95 duration-200">
-            {/* Modal Header */}
-            <div className="bg-neutral-900 px-6 py-5 text-white flex justify-between items-center">
-              <div>
-                <h3 className="font-extrabold text-lg tracking-tight">Request Free Quote</h3>
-                <p className="text-xs text-neutral-400 font-light mt-0.5">For {quoteService}</p>
+          <div className="bg-white rounded-2xl w-full max-w-4xl shadow-2xl overflow-hidden border border-neutral-150 relative animate-in fade-in zoom-in-95 duration-200 flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh]">
+            
+            {/* Left Pane - Product Media & Highlights */}
+            <div className="md:w-5/12 bg-neutral-950 text-white flex flex-col border-r border-neutral-850">
+              {/* Product Photo */}
+              <div className="relative h-44 md:h-52 w-full overflow-hidden flex-shrink-0">
+                <img 
+                  src={activeProduct.image} 
+                  alt={activeProduct.title} 
+                  className="absolute inset-0 w-full h-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent" />
               </div>
-              <button 
-                onClick={() => setIsQuoteModalOpen(false)}
-                className="text-neutral-400 hover:text-white p-1 rounded-full hover:bg-neutral-805 hover:bg-neutral-800 transition-all cursor-pointer"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              
+              {/* Details Content */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4 overflow-y-auto">
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-brand tracking-widest">PRODUCT DETAILS</span>
+                  <h4 className="font-extrabold text-xl tracking-tight text-white mt-1">{activeProduct.title}</h4>
+                  <p className="text-neutral-400 text-xs font-light leading-relaxed mt-2.5">
+                    {activeProduct.description}
+                  </p>
+                </div>
+
+                <div className="pt-2">
+                  <span className="text-[10px] uppercase font-bold text-neutral-500 tracking-widest block mb-2.5">KEY HIGHLIGHTS</span>
+                  <ul className="space-y-2">
+                    {activeProduct.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="flex items-center text-xs font-light text-neutral-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-brand mr-2 flex-shrink-0" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            {/* Modal Body */}
-            <div className="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
-              <div>
-                <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Full Name</label>
-                <input
-                  type="text"
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  placeholder="e.g. Muhammad Ali"
-                  className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Phone Number / WhatsApp</label>
-                <input
-                  type="text"
-                  value={customerPhone}
-                  onChange={(e) => setCustomerPhone(e.target.value)}
-                  placeholder="e.g. 0327 4643132"
-                  className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Service Type</label>
-                <select
-                  value={quoteService}
-                  onChange={(e) => setQuoteService(e.target.value)}
-                  className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white cursor-pointer"
-                >
-                  <option value="General Inquiry">General Inquiry / Other</option>
-                  <option value="Glass Calculation Estimate">Glass Calculation Estimate</option>
-                  {services.map((svc) => (
-                    <option key={svc.title} value={svc.title}>{svc.title}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Calculator Specifications attachment option */}
-              <div className="bg-neutral-50 rounded-xl p-4 border border-neutral-200 space-y-3">
-                <label className="flex items-center space-x-2 text-xs font-bold text-neutral-650 text-neutral-600 uppercase tracking-wider cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={includeSpecs}
-                    onChange={(e) => setIncludeSpecs(e.target.checked)}
-                    className="rounded text-brand focus:ring-brand h-4 w-4"
-                  />
-                  <span>Attach Calculator Dimensions</span>
-                </label>
-                {includeSpecs && (
-                  <div className="grid grid-cols-2 gap-2 text-xs text-neutral-500 pt-1 border-t border-neutral-100">
-                    <p><strong>Shape:</strong> <span className="capitalize">{shape}</span></p>
-                    <p><strong>Size:</strong> {width} x {height} {unit}</p>
-                    <p><strong>Thickness:</strong> {thickness} mm</p>
-                    <p><strong>Glass Type:</strong> {glassTypes.find(t => t.id === glassType)?.name || glassType}</p>
-                    <p className="col-span-2"><strong>Area:</strong> {areaSqFt} sq ft ({areaSqM} m²)</p>
+            {/* Right Pane - Form Details */}
+            <div className="md:w-7/12 p-6 flex flex-col justify-between bg-white overflow-y-auto">
+              <div className="space-y-4">
+                {/* Header */}
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-extrabold text-xl text-neutral-950 tracking-tight">Request Free Quote</h3>
+                    <p className="text-xs text-neutral-400 mt-0.5">Fill in the details to get pricing on WhatsApp</p>
                   </div>
-                )}
+                  <button 
+                    onClick={() => setIsQuoteModalOpen(false)}
+                    className="text-neutral-400 hover:text-neutral-650 p-1.5 rounded-full hover:bg-neutral-100 transition-all cursor-pointer"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Fields */}
+                <div className="space-y-3.5 pt-2">
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Full Name</label>
+                    <input
+                      type="text"
+                      value={customerName}
+                      onChange={(e) => setCustomerName(e.target.value)}
+                      placeholder="e.g. Muhammad Ali"
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Phone Number / WhatsApp</label>
+                    <input
+                      type="text"
+                      value={customerPhone}
+                      onChange={(e) => setCustomerPhone(e.target.value)}
+                      placeholder="e.g. 0327 4643132"
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Service Type</label>
+                    <select
+                      value={quoteService}
+                      onChange={(e) => setQuoteService(e.target.value)}
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white cursor-pointer"
+                    >
+                      <option value="General Inquiry">General Inquiry / Other</option>
+                      <option value="Glass Calculation Estimate">Glass Calculation Estimate</option>
+                      {services.map((svc) => (
+                        <option key={svc.title} value={svc.title}>{svc.title}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Calculator Specifications attachment option */}
+                  <div className="bg-neutral-50 rounded-xl p-4 border border-neutral-200 space-y-3">
+                    <label className="flex items-center space-x-2 text-xs font-bold text-neutral-650 text-neutral-600 uppercase tracking-wider cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={includeSpecs}
+                        onChange={(e) => setIncludeSpecs(e.target.checked)}
+                        className="rounded text-brand focus:ring-brand h-4 w-4"
+                      />
+                      <span>Attach Calculator Dimensions</span>
+                    </label>
+                    {includeSpecs && (
+                      <div className="grid grid-cols-2 gap-2 text-xs text-neutral-500 pt-1 border-t border-neutral-100">
+                        <p><strong>Shape:</strong> <span className="capitalize">{shape}</span></p>
+                        <p><strong>Size:</strong> {width} x {height} {unit}</p>
+                        <p><strong>Thickness:</strong> {thickness} mm</p>
+                        <p><strong>Glass Type:</strong> {glassTypes.find(t => t.id === glassType)?.name || glassType}</p>
+                        <p className="col-span-2"><strong>Area:</strong> {areaSqFt} sq ft ({areaSqM} m²)</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Project Details / Requirements</label>
+                    <textarea
+                      value={quoteNotes}
+                      onChange={(e) => setQuoteNotes(e.target.value)}
+                      placeholder="e.g. Need tempered glass sliding door for office partition. Please specify timeline for site measurement in DHA Phase 6."
+                      rows={3}
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white resize-none"
+                    />
+                  </div>
+                </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold uppercase text-neutral-500 tracking-wider mb-1.5">Project Details / Requirements</label>
-                <textarea
-                  value={quoteNotes}
-                  onChange={(e) => setQuoteNotes(e.target.value)}
-                  placeholder="e.g. Need tempered glass sliding door for office partition. Please specify timeline for site measurement in DHA Phase 6."
-                  rows={3}
-                  className="w-full bg-neutral-50 border border-neutral-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand focus:bg-white resize-none"
-                />
+              {/* Footer */}
+              <div className="flex justify-end space-x-3 pt-4 mt-4 border-t border-neutral-150">
+                <button
+                  onClick={() => setIsQuoteModalOpen(false)}
+                  className="text-neutral-650 hover:text-neutral-800 hover:bg-neutral-100 font-semibold px-5 py-2.5 rounded-lg text-sm transition-all cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <a
+                  href={getModalWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsQuoteModalOpen(false)}
+                  className="bg-brand hover:bg-brand-hover text-white font-bold px-6 py-2.5 rounded-lg text-sm shadow-md transition-all flex items-center justify-center cursor-pointer"
+                >
+                  Request Quote via WhatsApp
+                </a>
               </div>
             </div>
 
-            {/* Modal Footer */}
-            <div className="px-6 py-4 bg-neutral-50 flex justify-end space-x-3 border-t border-neutral-150">
-              <button
-                onClick={() => setIsQuoteModalOpen(false)}
-                className="text-neutral-650 hover:text-neutral-800 hover:bg-neutral-100 font-semibold px-4 py-2 rounded-lg text-sm transition-all cursor-pointer"
-              >
-                Cancel
-              </button>
-              <a
-                href={getModalWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsQuoteModalOpen(false)}
-                className="bg-brand hover:bg-brand-hover text-white font-bold px-6 py-2 rounded-lg text-sm shadow-md transition-all flex items-center justify-center cursor-pointer"
-              >
-                Request Quote via WhatsApp
-              </a>
-            </div>
           </div>
         </div>
       )}
