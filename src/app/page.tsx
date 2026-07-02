@@ -235,7 +235,7 @@ export default function MughalAluminum() {
       title: 'Double-Glazed Windows',
       description: 'Acoustic-grade windows integrating inert gas layers to deliver unparalleled thermal and sound insulation.',
       icon: <Volume2 className="w-6 h-6 text-brand" />,
-      image: 'https://images.unsplash.com/photo-1509644851169-3ae01277f23d?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
       features: ['Argon Gas Filled Chamber', 'High Sound Transmission Class Rating', 'Eliminates Internal Condensation', 'Dual Safety Glass Composition']
     }
   ];
