@@ -214,7 +214,7 @@ export default function MughalAluminum() {
       title: 'Smart LED Touch Mirrors',
       description: 'Luxury back-lit mirrors equipped with integrated touch sensors, dimmable lights, and anti-fog systems.',
       icon: <Scaling className="w-6 h-6 text-brand" />,
-      image: 'https://images.unsplash.com/photo-1620626011160-9928f1b2b64a?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80',
       features: ['Intuitive Smart Touch Sensors', 'Dimmable Warm, Cool & Natural Lights', 'Integrated Anti-Fog Demister Pad', '5mm Copper-Free Silver Mirror']
     },
     {
@@ -259,8 +259,54 @@ export default function MughalAluminum() {
     ]
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mughal Aluminium & Glass",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+    "@id": "https://mughal-aluminium.vercel.app/#organization",
+    "url": "https://mughal-aluminium.vercel.app",
+    "telephone": "+923274643132",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Service Line, Ring Road, Bedian Rd, near M Block",
+      "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "postalCode": "54000",
+      "addressCountry": "PK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.4697,
+      "longitude": 74.3779
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "sameAs": [
+      "https://maps.app.goo.gl/7N5btMYjkMgg3PAm8"
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased selection:bg-brand selection:text-white">
+      {/* Local Business JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       {/* Navigation */}
       <nav className="bg-white/90 border-b border-neutral-100 sticky top-0 z-50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
